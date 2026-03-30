@@ -23,6 +23,9 @@
   --color-navy: #0d2d6e;
   --color-navy-light: #1a4b9c;
   --radius: 0.5rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
 :root {

@@ -28,7 +28,9 @@
       "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"New-Item -ItemType Directory -Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\__tests__'' -Force | Out-Null; Write-Host ''DIR_CREATED''\")",
       "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npx tsc --noEmit 2>&1; Write-Host ''TSC_DONE''\")",
       "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npm run build 2>&1; Write-Host ''BUILD_DONE''\")",
-      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; git init; Write-Host ''GIT_INIT_DONE''\")"
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; git init; Write-Host ''GIT_INIT_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Remove-Item -Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\haravot-hatekuma'' -Recurse -Force; Write-Host ''TEMP_CLEANED''\")",
+      "Bash(npm run:*)"
     ]
   }
 }
