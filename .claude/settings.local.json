@@ -30,7 +30,10 @@
       "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npm run build 2>&1; Write-Host ''BUILD_DONE''\")",
       "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; git init; Write-Host ''GIT_INIT_DONE''\")",
       "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Remove-Item -Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\haravot-hatekuma'' -Recurse -Force; Write-Host ''TEMP_CLEANED''\")",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(cmd /c \"taskkill /F /IM node.exe\")",
+      "Bash(npm uninstall:*)"
     ]
   }
 }
