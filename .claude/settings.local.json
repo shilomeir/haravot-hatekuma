@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash \"C:/Users/nerya/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.5/skills/brainstorming/scripts/start-server.sh\" --project-dir \"C:/Users/nerya/OneDrive/שולחן העבודה/עבודות שילה AI/Claude/חרבות התקומה\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Read(//c/Users/nerya/OneDrive/שולחן העבודה/עבודות שילה AI/Claude/**)",
+      "Bash(npx create-next-app@15 haravot-hatekuma --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm install:*)",
+      "Bash(cmd.exe /c \"dir \"\"C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\node_modules\\\\.bin\"\" /b 2>&1 | head -5\")",
+      "Bash(cmd.exe /c \"cd /d \"\"C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\"\" && npm install 2>&1\")",
+      "Bash(cmd.exe /c \"cd /d \"\"C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\"\" && npm install && echo INSTALL_DONE\")",
+      "Bash(powershell.exe -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npm install; Write-Host ''INSTALL_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npm install; Write-Host ''INSTALL_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npm install @supabase/ssr @supabase/supabase-js zustand; Write-Host ''SUPABASE_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npm install -D vitest ''@vitejs/plugin-react'' jsdom ''@testing-library/react'' ''@testing-library/jest-dom''; Write-Host ''DEV_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npx shadcn@latest init --yes --base-color slate 2>&1; Write-Host ''SHADCN_INIT_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npx shadcn@latest init --yes 2>&1; Write-Host ''SHADCN_INIT_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \":*)",
+      "Bash(printf '\\\\n\\\\n\\\\n\\\\n\\\\n')",
+      "Bash(npx shadcn@latest init --yes)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npx shadcn@latest add button card badge progress separator tabs --yes 2>&1; Write-Host ''SHADCN_ADD_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Get-ChildItem ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\lib'' -ErrorAction SilentlyContinue | Select-Object Name; Test-Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\lib''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Test-Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\node_modules\\\\class-variance-authority''; Test-Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\node_modules\\\\clsx''; Test-Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\node_modules\\\\tailwind-merge''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npm install class-variance-authority clsx tailwind-merge lucide-react; Write-Host ''UTILS_DEPS_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"New-Item -ItemType Directory -Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\lib'' -Force | Out-Null; Write-Host ''DIR_CREATED''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"New-Item -ItemType Directory -Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\components\\\\layout'' -Force | Out-Null; Write-Host ''DIR_CREATED''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"New-Item -ItemType Directory -Path ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\__tests__'' -Force | Out-Null; Write-Host ''DIR_CREATED''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npx tsc --noEmit 2>&1; Write-Host ''TSC_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; npm run build 2>&1; Write-Host ''BUILD_DONE''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Location ''C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה''; git init; Write-Host ''GIT_INIT_DONE''\")"
+    ]
+  }
+}

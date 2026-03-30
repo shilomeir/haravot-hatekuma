@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>חרבות התקומה — נקי</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+    background: #f0f4fb;
+    color: #0f172a;
+    direction: rtl;
+    min-height: 100vh;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: #0d2d6e;
+    height: 54px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 28px;
+    box-shadow: 0 2px 12px rgba(13,45,110,0.3);
+  }
+  .logo { display: flex; align-items: center; gap: 9px; }
+  .logo-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center; font-size: 16px;
+  }
+  .logo-text { color: #fff; font-size: 15px; font-weight: 900; }
+  .nav { display: flex; gap: 2px; }
+  .nav-item {
+    padding: 6px 13px; border-radius: 7px;
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.55);
+    cursor: pointer; transition: all 0.15s;
+  }
+  .nav-item.active, .nav-item:hover { background: rgba(255,255,255,0.12); color: #fff; }
+  .user-area { display: flex; align-items: center; gap: 8px; }
+  .user-rank { font-size: 11px; color: rgba(255,255,255,0.45); }
+  .user-avatar {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.25);
+    display: flex; align-items: center; justify-content: center; font-size: 15px;
+  }
+
+  /* ── MAIN CENTERED LAYOUT ── */
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 20px 40px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+
+  /* ── TOP STATS ROW ── */
+  .stats-row {
+    display: flex; align-items: center; justify-content: space-between;
+    background: #fff;
+    border-radius: 14px;
+    padding: 12px 18px;
+    border: 1px solid rgba(13,45,110,0.08);
+    box-shadow: 0 1px 8px rgba(13,45,110,0.05);
+  }
+  .stat { text-align: center; }
+  .stat-val { font-size: 20px; font-weight: 900; color: #1a4b9c; line-height: 1; }
+  .stat-lbl { font-size: 10px; color: #94a3b8; font-weight: 600; margin-top: 3px; letter-spacing: 0.5px; }
+  .stat-divider { width: 1px; height: 32px; background: #e2e8f0; }
+  .combo-badge {
+    background: #fef3c7; border: 1px solid #fde68a;
+    border-radius: 20px; padding: 4px 12px;
+    font-size: 13px; font-weight: 800; color: #b45309;
+    display: flex; align-items: center; gap: 5px;
+  }
+
+  /* ── GAME CARD ── */
+  .game-card {
+    background: #fff;
+    border-radius: 22px;
+    border: 1px solid rgba(13,45,110,0.08);
+    box-shadow: 0 4px 24px rgba(13,45,110,0.08);
+    overflow: hidden;
+  }
+
+  /* Timer */
+  .timer-bar {
+    padding: 16px 22px 12px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .timer-num {
+    font-size: 32px; font-weight: 900; color: #1a4b9c;
+    font-variant-numeric: tabular-nums; line-height: 1; flex-shrink: 0;
+  }
+  .timer-track { flex: 1; height: 7px; background: #dbeafe; border-radius: 999px; overflow: hidden; }
+  .timer-fill {
+    height: 100%; width: 71%;
+    background: linear-gradient(90deg, #1a4b9c, #2563eb);
+    border-radius: 999px;
+  }
+  .q-num { font-size: 12px; color: #94a3b8; font-weight: 600; flex-shrink: 0; }
+
+  /* Question */
+  .q-area { padding: 4px 22px 18px; }
+  .q-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #eff6ff; border: 1px solid #dbeafe;
+    border-radius: 6px; padding: 3px 9px;
+    font-size: 11px; font-weight: 700; color: #1a4b9c;
+    margin-bottom: 11px;
+  }
+  .q-text { font-size: 20px; font-weight: 800; color: #0f172a; line-height: 1.5; }
+
+  /* Options */
+  .options { padding: 0 16px 8px; display: flex; flex-direction: column; gap: 9px; }
+  .opt {
+    display: flex; align-items: center; gap: 13px;
+    border: 1.5px solid #e2e8f0; border-radius: 13px;
+    padding: 14px 16px; cursor: pointer; background: #f8faff;
+    transition: all 0.15s; direction: rtl;
+  }
+  .opt:hover { border-color: #93c5fd; background: #eff6ff; transform: translateX(-2px); }
+  .opt.selected { border-color: #1a4b9c; background: #eff6ff; }
+  .opt.correct  { border-color: #22c55e; background: #f0fdf4; }
+  .opt.wrong    { border-color: #ef4444; background: #fef2f2; opacity: 0.6; }
+  .opt-letter {
+    width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+    background: #e2e8f0; border: 1.5px solid #cbd5e1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: #64748b; transition: all 0.15s;
+  }
+  .opt.selected .opt-letter { background: #1a4b9c; border-color: #1a4b9c; color: #fff; }
+  .opt.correct  .opt-letter { background: #22c55e; border-color: #22c55e; color: #fff; }
+  .opt.wrong    .opt-letter { background: #ef4444; border-color: #ef4444; color: #fff; }
+  .opt-text { font-size: 14px; font-weight: 600; color: #1e293b; line-height: 1.4; }
+
+  /* Hints row */
+  .hints-row {
+    padding: 6px 16px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hint-btns { display: flex; gap: 8px; }
+  .hint-btn {
+    background: #f8faff; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 6px 12px; font-size: 11px; font-weight: 600; color: #64748b;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .hint-btn:hover { border-color: #93c5fd; color: #1a4b9c; background: #eff6ff; }
+  .pips { display: flex; gap: 4px; align-items: center; }
+  .pip { width: 7px; height: 7px; border-radius: 50%; background: #dbeafe; }
+  .pip.done { background: #1a4b9c; }
+  .pip.now  { width: 16px; border-radius: 4px; background: #2563eb; }
+
+  /* ── FEEDBACK CARD ── */
+  .feedback-card {
+    background: #fff; border-radius: 18px;
+    border: 1px solid rgba(13,45,110,0.08);
+    box-shadow: 0 2px 16px rgba(13,45,110,0.06);
+    overflow: hidden;
+  }
+  .fb-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border-bottom: 1px solid #bbf7d0;
+  }
+  .fb-left { display: flex; align-items: center; gap: 10px; }
+  .fb-title { font-size: 14px; font-weight: 800; color: #15803d; }
+  .fb-detail { font-size: 11px; color: #16a34a; margin-top: 2px; line-height: 1.4; }
+  .fb-pts { font-size: 26px; font-weight: 900; color: #22c55e; }
+  .next-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    margin: 12px 14px 14px; padding: 13px;
+    background: linear-gradient(135deg, #1a4b9c, #0d2d6e);
+    color: #fff; border: none; border-radius: 13px;
+    font-size: 15px; font-weight: 800; cursor: pointer;
+    box-shadow: 0 4px 16px rgba(13,45,110,0.25);
+    transition: all 0.15s;
+  }
+  .next-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(13,45,110,0.32); }
+
+  /* ── BOTTOM ROW ── */
+  .bottom-row { display: flex; gap: 12px; }
+  .mini-card {
+    flex: 1; background: #fff; border-radius: 16px;
+    border: 1px solid rgba(13,45,110,0.08);
+    box-shadow: 0 1px 8px rgba(13,45,110,0.05);
+    padding: 14px 16px;
+  }
+  .mini-card h4 { font-size: 11px; font-weight: 700; color: #94a3b8; letter-spacing: 0.5px; margin-bottom: 10px; }
+
+  /* Streak */
+  .streak-num { font-size: 36px; font-weight: 900; color: #1a4b9c; line-height: 1; }
+  .streak-lbl { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+  .week-dots { display: flex; gap: 4px; margin-top: 10px; }
+  .wd { width: 26px; height: 26px; border-radius: 7px; font-size: 10px; font-weight: 700;
+        display: flex; align-items: center; justify-content: center; }
+  .wd.done  { background: #eff6ff; color: #1a4b9c; border: 1.5px solid #dbeafe; }
+  .wd.today { background: #1a4b9c; color: #fff; }
+  .wd.soon  { background: #f1f5f9; color: #cbd5e1; border: 1.5px solid #e2e8f0; }
+
+  /* Rank */
+  .rank-display { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .rank-face-big { font-size: 30px; }
+  .rank-name { font-size: 16px; font-weight: 900; color: #0f172a; }
+  .rank-sub  { font-size: 11px; color: #94a3b8; }
+  .xp-bar-wrap { }
+  .xp-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+  .xp-lbl { font-size: 10px; color: #94a3b8; font-weight: 600; }
+  .xp-track { height: 6px; background: #dbeafe; border-radius: 999px; overflow: hidden; }
+  .xp-fill  { height: 100%; width: 62%; background: linear-gradient(90deg, #1a4b9c, #2563eb); border-radius: 999px; }
+
+  /* Modes */
+  .modes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+  .mode-btn {
+    border: 1.5px solid #e2e8f0; border-radius: 10px;
+    padding: 9px 6px; text-align: center; cursor: pointer; background: #f8faff;
+    transition: all 0.15s;
+  }
+  .mode-btn:hover { border-color: #93c5fd; background: #eff6ff; }
+  .mode-btn.active { border-color: #1a4b9c; background: #eff6ff; }
+  .mode-btn .mi { font-size: 17px; margin-bottom: 3px; }
+  .mode-btn .mn { font-size: 10px; font-weight: 700; color: #475569; }
+  .mode-btn.active .mn { color: #0d2d6e; }
+
+  .watermark { text-align: center; color: #94a3b8; font-size: 10px; letter-spacing: 1px; padding: 4px; }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="nav">
+    <div class="nav-item">🏠 ראשי</div>
+    <div class="nav-item active">⚔️ משחק</div>
+    <div class="nav-item">🏆 מובילים</div>
+    <div class="nav-item">🛒 חנות</div>
+    <div class="nav-item">👤 פרופיל</div>
+  </div>
+  <div class="logo">
+    <div class="logo-icon">✡️</div>
+    <div class="logo-text">חרבות התקומה</div>
+  </div>
+  <div class="user-area">
+    <div class="user-rank">טוראי • 360 XP</div>
+    <div class="user-avatar">🧑‍🦱</div>
+  </div>
+</div>
+
+<!-- PAGE -->
+<div class="page">
+
+  <!-- STATS ROW -->
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-val">320</div>
+      <div class="stat-lbl">ניקוד</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="combo-badge">🔥 קומבו ×2</div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-val">3/3</div>
+      <div class="stat-lbl">נכון</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-val" style="color:#94a3b8">4/10</div>
+      <div class="stat-lbl">שאלה</div>
+    </div>
+  </div>
+
+  <!-- GAME CARD -->
+  <div class="game-card">
+    <!-- Timer -->
+    <div class="timer-bar">
+      <div class="timer-num">17</div>
+      <div class="timer-track"><div class="timer-fill"></div></div>
+      <div class="q-num">שאלה 4/10</div>
+    </div>
+
+    <!-- Question -->
+    <div class="q-area">
+      <div class="q-tag">📅 תאריך ↔ אירוע</div>
+      <div class="q-text">מי חוסל בביירות בינואר 2024 בפגיעת צה"ל?</div>
+    </div>
+
+    <!-- Options -->
+    <div class="options">
+      <div class="opt selected">
+        <div class="opt-letter">א</div>
+        <div class="opt-text">סאלח אל-עארורי — סגן ראש הלשכה המדינית של חמאס</div>
+      </div>
+      <div class="opt">
+        <div class="opt-letter">ב</div>
+        <div class="opt-text">יחיא סינוואר — מנהיג חמאס ברצועת עזה</div>
+      </div>
+      <div class="opt">
+        <div class="opt-letter">ג</div>
+        <div class="opt-text">חסן נסראללה — מנהיג ארגון חיזבאללה בלבנון</div>
+      </div>
+      <div class="opt">
+        <div class="opt-letter">ד</div>
+        <div class="opt-text">מרואן עיסא — המפקד הצבאי הבכיר של חמאס</div>
+      </div>
+    </div>
+
+    <!-- Hints + progress -->
+    <div class="hints-row">
+      <div class="hint-btns">
+        <div class="hint-btn">💡 רמז</div>
+        <div class="hint-btn">❌ הסר תשובה</div>
+      </div>
+      <div class="pips">
+        <div class="pip done"></div><div class="pip done"></div><div class="pip done"></div>
+        <div class="pip now"></div>
+        <div class="pip"></div><div class="pip"></div><div class="pip"></div>
+        <div class="pip"></div><div class="pip"></div><div class="pip"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEEDBACK -->
+  <div class="feedback-card">
+    <div class="fb-inner">
+      <div class="fb-left">
+        <span style="font-size:22px">✅</span>
+        <div>
+          <div class="fb-title">תשובה נכונה! קומבו ×2</div>
+          <div class="fb-detail">סאלח אל-עארורי חוסל בביירות ב-2 בינואר 2024</div>
+        </div>
+      </div>
+      <div class="fb-pts">+200</div>
+    </div>
+    <button class="next-btn">שאלה הבאה ←</button>
+  </div>
+
+  <!-- BOTTOM ROW: Streak + Rank + Modes -->
+  <div class="bottom-row">
+
+    <!-- Streak -->
+    <div class="mini-card" style="flex:0 0 auto; width:160px;">
+      <h4>🔥 רצף יומי</h4>
+      <div class="streak-num">7</div>
+      <div class="streak-lbl">ימים ברצף</div>
+      <div class="week-dots">
+        <div class="wd done">א</div><div class="wd done">ב</div>
+        <div class="wd done">ג</div><div class="wd done">ד</div>
+        <div class="wd done">ה</div><div class="wd done">ו</div>
+        <div class="wd today">ש</div>
+      </div>
+    </div>
+
+    <!-- Rank -->
+    <div class="mini-card">
+      <h4>🎖️ דרגה</h4>
+      <div class="rank-display">
+        <div class="rank-face-big">🧑‍🦱</div>
+        <div>
+          <div class="rank-name">טוראי</div>
+          <div class="rank-sub">רמה 3 • עוד 140 XP</div>
+        </div>
+      </div>
+      <div class="xp-bar-wrap">
+        <div class="xp-row">
+          <span class="xp-lbl">360 XP</span>
+          <span class="xp-lbl">500 XP</span>
+        </div>
+        <div class="xp-track"><div class="xp-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- Modes -->
+    <div class="mini-card" style="flex:0 0 auto; width:200px;">
+      <h4>🎮 מצב משחק</h4>
+      <div class="modes-grid">
+        <div class="mode-btn active"><div class="mi">📚</div><div class="mn">רגיל</div></div>
+        <div class="mode-btn"><div class="mi">⚡</div><div class="mn">בליץ</div></div>
+        <div class="mode-btn"><div class="mi">❤️</div><div class="mn">הישרדות</div></div>
+        <div class="mode-btn"><div class="mi">🃏</div><div class="mn">זיכרון</div></div>
+        <div class="mode-btn"><div class="mi">📅</div><div class="mn">יומי</div></div>
+        <div class="mode-btn"><div class="mi">🌐</div><div class="mn">מרובה</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="watermark">חרבות התקומה • זיכרון, ידע, ניצחון</div>
+</div>
+
+</body>
+</html>

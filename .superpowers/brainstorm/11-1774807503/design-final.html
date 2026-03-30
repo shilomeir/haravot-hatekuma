@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>חרבות התקומה — עיצוב סופי</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg:         #eef2fb;
+    --white:      #ffffff;
+    --blue-deep:  #0d2d6e;
+    --blue-mid:   #1a4b9c;
+    --blue-light: #2563eb;
+    --blue-pale:  #dbeafe;
+    --blue-ghost: #eff6ff;
+    --border:     rgba(13,45,110,0.10);
+    --border-mid: rgba(13,45,110,0.20);
+    --text-dark:  #0f172a;
+    --text-mid:   #334155;
+    --text-soft:  #64748b;
+    --green:      #16a34a;
+    --green-pale: #dcfce7;
+    --red:        #dc2626;
+    --red-pale:   #fee2e2;
+    --gold:       #b45309;
+    --gold-pale:  #fef3c7;
+  }
+
+  body {
+    font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-dark);
+    direction: rtl;
+    min-height: 100vh;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--blue-deep);
+    padding: 0 28px;
+    height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 16px rgba(13,45,110,0.35);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-badge {
+    width: 34px; height: 34px; border-radius: 9px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border: 1px solid rgba(255,255,255,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+  }
+  .logo-text { color: #fff; font-size: 15px; font-weight: 900; letter-spacing: -0.3px; }
+  .logo-sub { color: rgba(255,255,255,0.5); font-size: 10px; font-weight: 600; letter-spacing: 1px; }
+
+  .nav { display: flex; gap: 2px; }
+  .nav-item {
+    display: flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: 8px;
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6);
+    cursor: pointer; transition: all 0.18s;
+  }
+  .nav-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
+  .nav-item.active { background: rgba(255,255,255,0.15); color: #fff; }
+
+  .rank-pill {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px; padding: 5px 14px 5px 8px; cursor: pointer;
+  }
+  .rank-avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 1.5px solid rgba(255,255,255,0.4);
+    display: flex; align-items: center; justify-content: center; font-size: 14px;
+  }
+  .rank-info { text-align: right; }
+  .rank-name { font-size: 12px; font-weight: 800; color: #fff; }
+  .rank-title { font-size: 10px; color: rgba(255,255,255,0.5); }
+
+  /* ── RANK PROGRESS BANNER ── */
+  .rank-banner {
+    background: linear-gradient(90deg, var(--blue-deep) 0%, #1a3a7c 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 28px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .rank-face { font-size: 26px; }
+  .rank-details { flex: 1; }
+  .rank-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+  .rank-label { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 1px; }
+  .rank-current { font-size: 15px; font-weight: 800; color: #fff; }
+  .rank-next { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .xp-track { height: 5px; background: rgba(255,255,255,0.12); border-radius: 999px; flex: 1; }
+  .xp-fill { height: 100%; width: 62%; background: linear-gradient(90deg, #60a5fa, #3b82f6); border-radius: 999px; }
+  .xp-label { font-size: 11px; color: rgba(255,255,255,0.45); white-space: nowrap; }
+  .coins-badge {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; padding: 5px 12px;
+  }
+  .coins-val { font-size: 13px; font-weight: 800; color: #fbbf24; }
+  .gems-badge {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; padding: 5px 12px;
+  }
+  .gems-val { font-size: 13px; font-weight: 800; color: #a78bfa; }
+
+  /* ── LAYOUT ── */
+  .page { display: flex; gap: 24px; padding: 24px 28px; max-width: 1300px; margin: 0 auto; }
+  .col-main { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+  .col-side { width: 284px; display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; }
+
+  /* ── CARD BASE ── */
+  .card {
+    background: var(--white); border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 20px rgba(13,45,110,0.06), 0 1px 4px rgba(13,45,110,0.04);
+    overflow: hidden;
+  }
+  .card-head {
+    background: linear-gradient(135deg, var(--blue-ghost), #f0f5ff);
+    border-bottom: 1px solid var(--border);
+    padding: 13px 18px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card-head h3 { font-size: 13px; font-weight: 800; color: var(--blue-deep); }
+  .card-body { padding: 16px; }
+
+  /* ── GAME HEADER ── */
+  .game-header {
+    background: var(--blue-deep);
+    padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .stat-chips { display: flex; gap: 8px; }
+  .chip {
+    display: flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px; padding: 5px 12px;
+    font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.7);
+  }
+  .chip .cv { color: #fff; }
+  .chip .combo { color: #fbbf24; font-size: 14px; }
+  .q-count { font-size: 12px; color: rgba(255,255,255,0.5); }
+  .q-count strong { color: #fff; }
+
+  /* ── TIMER ── */
+  .timer-section { padding: 16px 20px 12px; border-bottom: 1px solid var(--border); }
+  .timer-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .timer-num {
+    font-size: 30px; font-weight: 900; color: var(--blue-light);
+    font-variant-numeric: tabular-nums; line-height: 1;
+  }
+  .timer-label { font-size: 11px; color: var(--text-soft); font-weight: 600; letter-spacing: 0.5px; }
+  .timer-track { height: 7px; background: var(--blue-pale); border-radius: 999px; overflow: hidden; }
+  .timer-fill {
+    height: 100%; width: 71%;
+    background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
+    border-radius: 999px; box-shadow: 0 0 8px rgba(37,99,235,0.4);
+  }
+
+  /* ── QUESTION ── */
+  .q-section { padding: 18px 20px 14px; }
+  .q-type-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: var(--blue-ghost); border: 1px solid var(--blue-pale);
+    border-radius: 6px; padding: 3px 10px;
+    font-size: 11px; font-weight: 700; color: var(--blue-mid);
+    margin-bottom: 12px; letter-spacing: 0.5px;
+  }
+  .q-text { font-size: 21px; font-weight: 800; color: var(--text-dark); line-height: 1.45; }
+
+  /* ── OPTIONS ── */
+  .options { padding: 4px 20px 16px; display: flex; flex-direction: column; gap: 9px; }
+  .opt {
+    display: flex; align-items: center; gap: 13px;
+    background: #f8faff; border: 1.5px solid var(--border);
+    border-radius: 13px; padding: 13px 15px;
+    cursor: pointer; transition: all 0.15s; direction: rtl;
+  }
+  .opt:hover { border-color: var(--blue-light); background: var(--blue-ghost); transform: translateX(-2px); box-shadow: 0 2px 12px rgba(37,99,235,0.10); }
+  .opt.selected { border-color: var(--blue-mid); background: var(--blue-ghost); box-shadow: 0 2px 14px rgba(26,75,156,0.15); }
+  .opt.correct { border-color: var(--green); background: var(--green-pale); }
+  .opt.wrong { border-color: var(--red); background: var(--red-pale); opacity: 0.65; }
+  .opt-badge {
+    width: 33px; height: 33px; border-radius: 50%; flex-shrink: 0;
+    background: #e2e8f0; border: 1.5px solid #cbd5e1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: var(--text-soft); transition: all 0.15s;
+  }
+  .opt.selected .opt-badge { background: var(--blue-mid); border-color: var(--blue-mid); color: #fff; }
+  .opt.correct .opt-badge { background: var(--green); border-color: var(--green); color: #fff; }
+  .opt.wrong .opt-badge { background: var(--red); border-color: var(--red); color: #fff; }
+  .opt-text { font-size: 14px; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
+
+  /* ── TOOLS BAR ── */
+  .tools-bar { padding: 2px 20px 16px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tool-btn {
+    display: flex; align-items: center; gap: 5px;
+    background: #f8faff; border: 1px solid var(--border);
+    border-radius: 8px; padding: 6px 13px;
+    font-size: 12px; font-weight: 600; color: var(--text-soft); cursor: pointer;
+    transition: all 0.15s;
+  }
+  .tool-btn:hover { border-color: var(--blue-light); color: var(--blue-mid); background: var(--blue-ghost); }
+  .progress-pips { display: flex; gap: 4px; align-items: center; margin-right: auto; }
+  .pip { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-pale); }
+  .pip.done { background: var(--blue-mid); }
+  .pip.active { background: var(--blue-light); width: 18px; border-radius: 4px; }
+
+  /* ── FEEDBACK ── */
+  .feedback {
+    margin: 0 16px 6px;
+    border-radius: 13px; padding: 13px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--green-pale); border: 1.5px solid #86efac;
+  }
+  .fb-l { display: flex; align-items: center; gap: 10px; }
+  .fb-title { font-size: 14px; font-weight: 800; color: #15803d; }
+  .fb-detail { font-size: 11px; color: #16a34a; margin-top: 2px; }
+  .fb-pts { font-size: 22px; font-weight: 900; color: var(--green); }
+  .next-btn {
+    margin: 8px 16px 16px; width: calc(100% - 32px);
+    background: linear-gradient(135deg, var(--blue-mid), var(--blue-deep));
+    color: #fff; border: none; border-radius: 13px;
+    padding: 13px 24px; font-size: 14px; font-weight: 800;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+    box-shadow: 0 4px 16px rgba(13,45,110,0.28);
+    transition: all 0.18s;
+  }
+  .next-btn:hover { box-shadow: 0 6px 20px rgba(13,45,110,0.38); transform: translateY(-1px); }
+
+  /* ── SIDEBAR CARDS ── */
+  .streak-display { text-align: center; padding: 4px 0 8px; }
+  .streak-num { font-size: 46px; font-weight: 900; color: var(--blue-mid); line-height: 1; }
+  .streak-lbl { font-size: 11px; color: var(--text-soft); font-weight: 600; margin-top: 3px; }
+  .streak-days { display: flex; gap: 4px; justify-content: center; margin-top: 12px; }
+  .day { width: 27px; height: 27px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
+  .day.done { background: var(--blue-ghost); color: var(--blue-mid); border: 1.5px solid var(--blue-pale); }
+  .day.today { background: var(--blue-mid); color: #fff; }
+  .day.future { background: #f1f5f9; color: #cbd5e1; border: 1.5px solid #e2e8f0; }
+
+  .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mode {
+    border-radius: 11px; padding: 11px; text-align: center;
+    border: 1.5px solid var(--border); background: #f8faff; cursor: pointer; transition: all 0.15s;
+  }
+  .mode:hover { border-color: var(--blue-light); background: var(--blue-ghost); }
+  .mode.active { border-color: var(--blue-mid); background: var(--blue-ghost); }
+  .mode-icon { font-size: 19px; margin-bottom: 4px; }
+  .mode-name { font-size: 11px; font-weight: 800; color: var(--text-mid); }
+  .mode.active .mode-name { color: var(--blue-deep); }
+
+  .stat-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #f1f5f9; }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-lbl { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--text-soft); font-weight: 600; }
+  .stat-val { font-size: 15px; font-weight: 800; color: var(--text-dark); }
+  .stat-val.blue { color: var(--blue-mid); }
+
+  .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+  .ach {
+    background: #f8faff; border: 1px solid var(--border);
+    border-radius: 11px; padding: 11px; text-align: center;
+  }
+  .ach.unlocked { background: var(--blue-ghost); border-color: var(--blue-pale); }
+  .ach-icon { font-size: 20px; margin-bottom: 3px; }
+  .ach-name { font-size: 10px; font-weight: 700; color: var(--text-soft); }
+  .ach.unlocked .ach-name { color: var(--blue-deep); }
+
+  /* ── RANK PROGRESSION PREVIEW ── */
+  .ranks-row { display: flex; gap: 6px; justify-content: space-between; align-items: flex-end; }
+  .rank-step { text-align: center; flex: 1; }
+  .rank-step-face { font-size: 18px; }
+  .rank-step-name { font-size: 9px; font-weight: 700; color: var(--text-soft); margin-top: 3px; white-space: nowrap; }
+  .rank-step.active .rank-step-name { color: var(--blue-mid); }
+  .rank-step-face-wrap {
+    width: 36px; height: 36px; border-radius: 50%; margin: 0 auto 4px;
+    background: #f1f5f9; border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+  }
+  .rank-step.active .rank-step-face-wrap {
+    background: var(--blue-ghost); border-color: var(--blue-mid);
+    box-shadow: 0 0 0 3px rgba(26,75,156,0.12);
+  }
+  .rank-step.done .rank-step-face-wrap {
+    background: var(--blue-deep); border-color: var(--blue-deep);
+  }
+  .rank-arrow { font-size: 10px; color: #cbd5e1; align-self: center; flex: 0; }
+
+  .watermark { text-align: center; padding: 10px; color: #94a3b8; font-size: 10px; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<!-- ── TOPBAR ── -->
+<div class="topbar">
+  <div class="nav">
+    <div class="nav-item">🏠 ראשי</div>
+    <div class="nav-item active">⚔️ משחק</div>
+    <div class="nav-item">🏆 מובילים</div>
+    <div class="nav-item">🛒 חנות</div>
+    <div class="nav-item">👤 פרופיל</div>
+  </div>
+  <div class="logo">
+    <div class="logo-badge">✡️</div>
+    <div>
+      <div class="logo-text">חרבות התקומה</div>
+      <div class="logo-sub">חרבות ברזל</div>
+    </div>
+  </div>
+  <div class="rank-pill">
+    <div class="rank-avatar">🧑‍🦱</div>
+    <div class="rank-info">
+      <div class="rank-name">שילה מאיר</div>
+      <div class="rank-title">טוראי • רמה 3</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── RANK PROGRESS BAR ── -->
+<div class="rank-banner">
+  <div class="rank-face">🧑‍🦱</div>
+  <div class="rank-details">
+    <div class="rank-row">
+      <span class="rank-label">דרגה נוכחית:</span>
+      <span class="rank-current">טוראי</span>
+      <span class="rank-next">← רב טוראי עוד 140 XP</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="xp-track" style="flex:1"><div class="xp-fill"></div></div>
+      <span class="xp-label">360 / 500 XP</span>
+    </div>
+  </div>
+  <div class="coins-badge">🪙 <span class="coins-val">1,240</span></div>
+  <div class="gems-badge">💎 <span class="gems-val">14</span></div>
+</div>
+
+<!-- ── MAIN LAYOUT ── -->
+<div class="page">
+
+  <!-- ── MAIN COL ── -->
+  <div class="col-main">
+
+    <!-- GAME CARD -->
+    <div class="card">
+
+      <!-- Header -->
+      <div class="game-header">
+        <div class="stat-chips">
+          <div class="chip">⭐ ניקוד <span class="cv">320</span></div>
+          <div class="chip">🔥 רצף <span class="combo">×2</span></div>
+          <div class="chip">✅ נכון <span class="cv">3/3</span></div>
+        </div>
+        <div class="q-count">שאלה <strong>4</strong> מתוך <strong>10</strong></div>
+      </div>
+
+      <!-- Timer -->
+      <div class="timer-section">
+        <div class="timer-row">
+          <span class="timer-label">⏱ זמן שנותר</span>
+          <span class="timer-num">17</span>
+        </div>
+        <div class="timer-track"><div class="timer-fill"></div></div>
+      </div>
+
+      <!-- Question -->
+      <div class="q-section">
+        <div class="q-type-tag">📅 תאריך ↔ אירוע</div>
+        <div class="q-text">מי חוסל בביירות בינואר 2024 בפגיעת צה"ל?</div>
+      </div>
+
+      <!-- Options -->
+      <div class="options">
+        <div class="opt selected">
+          <div class="opt-badge">א</div>
+          <div class="opt-text">סאלח אל-עארורי — סגן ראש הלשכה המדינית של חמאס</div>
+        </div>
+        <div class="opt">
+          <div class="opt-badge">ב</div>
+          <div class="opt-text">יחיא סינוואר — מנהיג חמאס ברצועת עזה</div>
+        </div>
+        <div class="opt">
+          <div class="opt-badge">ג</div>
+          <div class="opt-text">חסן נסראללה — מנהיג ארגון חיזבאללה בלבנון</div>
+        </div>
+        <div class="opt">
+          <div class="opt-badge">ד</div>
+          <div class="opt-text">מרואן עיסא — המפקד הצבאי הבכיר של חמאס</div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="tools-bar">
+        <div class="tool-btn">💡 רמז (×2)</div>
+        <div class="tool-btn">❌ הסר תשובה</div>
+        <div class="tool-btn">⏱ +5 שניות</div>
+        <div class="progress-pips">
+          <div class="pip done"></div>
+          <div class="pip done"></div>
+          <div class="pip done"></div>
+          <div class="pip active"></div>
+          <div class="pip"></div><div class="pip"></div><div class="pip"></div>
+          <div class="pip"></div><div class="pip"></div><div class="pip"></div>
+        </div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="feedback">
+        <div class="fb-l">
+          <span style="font-size:20px">✅</span>
+          <div>
+            <div class="fb-title">תשובה נכונה! +×2 קומבו</div>
+            <div class="fb-detail">סאלח אל-עארורי חוסל בביירות ב-2 בינואר 2024</div>
+          </div>
+        </div>
+        <div class="fb-pts">+200</div>
+      </div>
+      <button class="next-btn">שאלה הבאה ←</button>
+    </div>
+
+  </div>
+
+  <!-- ── SIDEBAR ── -->
+  <div class="col-side">
+
+    <!-- Rank Progression -->
+    <div class="card">
+      <div class="card-head"><span>🎖️</span><h3>סולם הדרגות</h3></div>
+      <div class="card-body">
+        <div class="ranks-row">
+          <div class="rank-step done">
+            <div class="rank-step-face-wrap" style="font-size:14px">🧒</div>
+            <div class="rank-step-name">טירון</div>
+          </div>
+          <div class="rank-arrow">›</div>
+          <div class="rank-step active">
+            <div class="rank-step-face-wrap">🧑‍🦱</div>
+            <div class="rank-step-name" style="color:#1a4b9c;font-weight:900">טוראי</div>
+          </div>
+          <div class="rank-arrow">›</div>
+          <div class="rank-step">
+            <div class="rank-step-face-wrap">👨</div>
+            <div class="rank-step-name">רב טוראי</div>
+          </div>
+          <div class="rank-arrow">›</div>
+          <div class="rank-step">
+            <div class="rank-step-face-wrap">👨‍🦱</div>
+            <div class="rank-step-name">סמל</div>
+          </div>
+          <div class="rank-arrow">›</div>
+          <div class="rank-step">
+            <div class="rank-step-face-wrap">👮</div>
+            <div class="rank-step-name">סגן</div>
+          </div>
+          <div class="rank-arrow">›</div>
+          <div class="rank-step">
+            <div class="rank-step-face-wrap">👨‍✈️</div>
+            <div class="rank-step-name">סרן</div>
+          </div>
+          <div class="rank-arrow">›</div>
+          <div class="rank-step">
+            <div class="rank-step-face-wrap">🧔</div>
+            <div class="rank-step-name">רב"ם</div>
+          </div>
+          <div class="rank-arrow">›</div>
+          <div class="rank-step">
+            <div class="rank-step-face-wrap">👴</div>
+            <div class="rank-step-name">אלוף</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daily Streak -->
+    <div class="card">
+      <div class="card-head"><span>🔥</span><h3>רצף יומי</h3></div>
+      <div class="card-body">
+        <div class="streak-display">
+          <div class="streak-num">7</div>
+          <div class="streak-lbl">ימים ברצף</div>
+        </div>
+        <div class="streak-days">
+          <div class="day done">א</div><div class="day done">ב</div>
+          <div class="day done">ג</div><div class="day done">ד</div>
+          <div class="day done">ה</div><div class="day done">ו</div>
+          <div class="day today">ש</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Modes -->
+    <div class="card">
+      <div class="card-head"><span>🎮</span><h3>מצבי משחק</h3></div>
+      <div class="card-body">
+        <div class="mode-grid">
+          <div class="mode active"><div class="mode-icon">📚</div><div class="mode-name">רגיל</div></div>
+          <div class="mode"><div class="mode-icon">⚡</div><div class="mode-name">בליץ</div></div>
+          <div class="mode"><div class="mode-icon">❤️</div><div class="mode-name">הישרדות</div></div>
+          <div class="mode"><div class="mode-icon">🃏</div><div class="mode-name">זיכרון</div></div>
+          <div class="mode"><div class="mode-icon">📅</div><div class="mode-name">אתגר יומי</div></div>
+          <div class="mode"><div class="mode-icon">🌐</div><div class="mode-name">מרובה</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="card">
+      <div class="card-head"><span>📊</span><h3>סטטיסטיקות</h3></div>
+      <div class="card-body">
+        <div class="stat-row"><div class="stat-lbl">🎯 דיוק</div><div class="stat-val blue">87%</div></div>
+        <div class="stat-row"><div class="stat-lbl">⭐ ניקוד כולל</div><div class="stat-val blue">3,840</div></div>
+        <div class="stat-row"><div class="stat-lbl">🎮 משחקים</div><div class="stat-val">24</div></div>
+        <div class="stat-row"><div class="stat-lbl">🏆 מקום</div><div class="stat-val blue">#3</div></div>
+      </div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="card">
+      <div class="card-head"><span>🏅</span><h3>הישגים</h3></div>
+      <div class="card-body">
+        <div class="ach-grid">
+          <div class="ach unlocked"><div class="ach-icon">⚔️</div><div class="ach-name">לוחם ראשון</div></div>
+          <div class="ach unlocked"><div class="ach-icon">🔥</div><div class="ach-name">רצף של 5</div></div>
+          <div class="ach"><div class="ach-icon">🔒</div><div class="ach-name">גיבור קרב</div></div>
+          <div class="ach"><div class="ach-icon">🔒</div><div class="ach-name">היסטוריון</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="watermark">חרבות התקומה • זיכרון, ידע, ניצחון</div>
+
+</body>
+</html>

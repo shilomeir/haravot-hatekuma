@@ -1,0 +1,223 @@
+🧠 Role
+You are an advanced AI system that integrates:
+
+Game Engine
+
+Question Generation Engine
+
+Distractor Generation Engine (AI-within-AI)
+
+Personalization Engine
+
+Real-time Multiplayer Architecture
+
+The Goal: To create a trivia game that is addictive, smart, diverse, and perfectly stable.
+
+🎯 Game Objective
+A Multiple Choice only trivia game where the user:
+
+Does not just memorize dates.
+
+But understands contexts, events, figures, locations, and logic.
+
+🧩 Question Types (CRITICAL – Variety)
+A mix of the following must be used:
+
+📅 Date ↔ Event
+
+👤 Who is it? (The figure associated with the event)
+
+📍 Where did it happen? (Event location)
+
+⚔️ Which Organization? (Hamas / Hezbollah / Iran, etc.)
+
+🧠 What happened first? (Chronological order)
+
+🎯 What was the goal? (Mission/Operation objective)
+
+📊 What was the result? (Impact / Achievement)
+
+🔄 Logical Completion: "Which event completes this sequence?"
+
+🎲 Question Type Balance
+40% Dates
+
+20% Figures
+
+15% Location
+
+15% Organizations
+
+10% Deep Understanding
+
+❗ Question Format
+JSON
+{
+  "question": "string",
+  "type": "string",
+  "difficulty": "easy" | "medium" | "hard",
+  "options": ["A", "B", "C", "D"],
+  "correctIndex": number,
+  "explanation": "string"
+}
+🧠 Distractor Engine (AI-within-AI)
+Input: Correct answer, Question type, Database.
+Logic:
+
+If Date: Only use dates in close proximity.
+
+If Figure: Use figures from the same organization.
+
+If Location: Use nearby geographical areas.
+
+If Event: Use the same type of action/operation.
+
+🎯 Confusion Engine
+Calculation: Similarity score.
+
+Goal: 70%–90% similarity.
+
+❌ Rules: No absurd answers, no duplicates, always exactly 4 options.
+
+🎮 Game Loop
+Select Question → 2. Display 4 Options → 3. User Clicks → 4. Lock Selection → 5. Verification → 6. Feedback → 7. Transition.
+
+🧮 Scoring
+Correct: +100 | Incorrect: 0
+
+Combos:
+
+3 in a row → ×1.5
+
+5 in a row → ×2
+
+Speed: < 3 seconds → Bonus points.
+
+⏱️ Timer
+10–20 seconds per question.
+
+Timeout = 0 points.
+
+🧬 Personalization AI System
+Track: Errors and Response Time.
+Adjust: Provide more questions regarding the user's weaknesses.
+
+🎮 Game Modes
+Standard
+
+Blitz (Fast-paced)
+
+Survival (One mistake = Game Over)
+
+Memory (Card-based)
+
+Daily Challenge
+
+🌐 Multiplayer (MULTI-DEVICE – Critical)
+🧠 Principle: Server-Authoritative only.
+
+🏗️ Structure (Room): ID, Players, State, CurrentQuestion, Answers.
+
+🔄 Flow:
+
+Create Room → 2. Join → 3. Start → 4. Send Question → 5. Players select (A/B/C/D) → 6. Server saves answers.
+
+Transition Conditions: Everyone answered OR Timeout.
+
+❗ Transition Mechanism: Use LOCK to prevent double triggers.
+
+🧯 Troubleshooting
+Question doesn't advance: Check answers count.
+
+Button doesn't work: Implement debounce + disable.
+
+Desync: Ensure no local state.
+
+Disconnection: Reconnect based on Session ID.
+
+📡 Communication & UI
+Tech: WebSocket, Retry logic, Heartbeat.
+
+States: waiting, answering, reveal, transition.
+
+🎨 UI: 4 large buttons, highlight selection, disable buttons after choice.
+
+🔊 Feedback: Correct → Green, Incorrect → Red.
+
+🚀 Final Objective
+A game that is: Addictive, Diverse, Intelligent, Stable, Perfectly Synchronized, and contains zero open-ended answers.
+
+
+
+Here is the translation of your progression and monetization logic into English:
+
+🎯 Goal
+To create a "Core Loop" addiction:
+Play → Earn → Upgrade → Repeat
+
+💵 Currencies
+🪙 Coins (Standard)
+Earned via:
+
+Correct answers
+
+Match victories
+
+Daily challenges
+
+💎 Gems (Rare)
+Earned via:
+
+Achievements
+
+Win streaks
+
+Special events
+
+🧮 Earnings
+Correct Answer: +10 coins
+
+Combo Multipliers: ×1.5 / ×2
+
+Multiplayer Victory: +100 coins
+
+Blitz Mode: Based on performance
+
+🛒 Shop
+Purchasable items:
+
+💡 Hints: Reveal answer / Remove one wrong option.
+
+⏱️ Time Extensions: +5 seconds.
+
+❤️ Lives (Survival): Extra attempts.
+
+🎨 Cosmetics: Button skins, animations, and effects.
+
+🧬 Boosters: ×2 Points, Slow Time, Partial Reveal.
+
+🎁 Daily Rewards
+Daily Login: Progressive reward.
+
+Day 7: Major bonus.
+
+🏆 Achievements
+Milestones: 10 Wins, 5 Combos, 100 Correct Answers.
+
+Reward: Grants Gems.
+
+📈 Progression System
+Leveling up via XP:
+
+Correct Answer: Provides XP.
+
+Level Up: Unlocks new modes and grants rewards.
+
+🔥 Addiction Mechanisms
+Daily Streak: Incentivizes daily play.
+
+Variable Rewards: Keeping prizes unpredictable.
+
+"Near Win" Feeling: Encourages "just one more try."
+
+High-Impact Animations: Strong visual feedback for success.
