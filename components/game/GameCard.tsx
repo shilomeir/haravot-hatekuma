@@ -8,6 +8,7 @@ import { AnswerOption } from './AnswerOption'
 import { FeedbackBanner } from './FeedbackBanner'
 import { LivesIndicator } from './LivesIndicator'
 import { MODES } from '@/lib/modes'
+import { MemoryBoard } from './MemoryBoard'
 
 export function GameCard() {
   const {
@@ -45,6 +46,8 @@ export function GameCard() {
     if (phase !== 'playing') return
     submitAnswer(-1, timerSeconds * 1000)
   }, [phase, submitAnswer, timerSeconds])
+
+  if (mode === 'memory') return <MemoryBoard />
 
   if (!question) return null
 

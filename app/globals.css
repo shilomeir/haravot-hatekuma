@@ -102,18 +102,18 @@ body {
   50% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
 }
 
-@utility .animate-slide-up {
+@utility animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
 
-@utility .animate-count-up {
+@utility animate-count-up {
   animation: count-up 0.4s ease-out;
 }
 
-@utility .animate-fade-in {
+@utility animate-fade-in {
   animation: fade-in 0.5s ease-out;
 }
 
-@utility .animate-pulse-glow {
+@utility animate-pulse-glow {
   animation: pulse-glow 2s infinite;
 }
