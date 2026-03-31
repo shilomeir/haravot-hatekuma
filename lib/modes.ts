@@ -1,3 +1,6 @@
+export type GameMode = 'standard' | 'blitz' | 'survival' | 'memory' | 'daily' | 'multi'
+export type Difficulty = 'easy' | 'medium' | 'hard'
+
 export interface ModeConfig {
   id: string
   label: string
