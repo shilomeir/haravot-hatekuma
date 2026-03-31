@@ -1,8 +1,24 @@
-export default function Home() {
+import { HeroSection } from '@/components/home/HeroSection'
+import { ModesGrid } from '@/components/home/ModesGrid'
+import { RankPanel } from '@/components/home/RankPanel'
+import { StreakCard } from '@/components/home/StreakCard'
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
-      <h1 className="text-3xl font-bold text-[#0d2d6e]">חרבות התקומה</h1>
-      <p className="text-slate-500">בקרוב...</p>
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left column - hero + modes */}
+        <div className="lg:col-span-2 space-y-8">
+          <HeroSection />
+          <ModesGrid />
+        </div>
+
+        {/* Right column - rank panel + streak */}
+        <div className="space-y-4">
+          <StreakCard />
+          <RankPanel />
+        </div>
+      </div>
     </div>
   )
 }

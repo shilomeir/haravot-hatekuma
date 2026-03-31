@@ -80,3 +80,40 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
 }
+
+/* Animation keyframes */
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+}
+
+@utility .animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+@utility .animate-count-up {
+  animation: count-up 0.4s ease-out;
+}
+
+@utility .animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+@utility .animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
