@@ -33,7 +33,26 @@
       "Bash(npm run:*)",
       "mcp__Claude_Preview__preview_start",
       "Bash(cmd /c \"taskkill /F /IM node.exe\")",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(npm test:*)",
+      "Bash(node -e \":*)",
+      "Bash(npx tsc:*)",
+      "Bash(vercel --version)",
+      "Bash(vercel link:*)",
+      "Bash(ls \"C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\.vercel\"\" 2>/dev/null && cat \"C:UsersneryaOneDriveשולחן העבודהעבודות שילה AIClaudeחרבות התקומה.vercelproject.json \")",
+      "Bash(npm i:*)",
+      "Bash(vercel whoami:*)",
+      "mcp__plugin_vercel_vercel__deploy_to_vercel",
+      "mcp__plugin_vercel_vercel__list_projects",
+      "Bash(vercel project:*)",
+      "Bash(\"C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות:*)",
+      "Bash(vercel deploy:*)",
+      "mcp__plugin_vercel_vercel__list_deployments",
+      "mcp__plugin_vercel_vercel__get_runtime_logs",
+      "Bash(vercel --prod --yes --scope team_N2urqUY1TssvnYhTvX1dIWs3)",
+      "Bash(vercel logs:*)",
+      "mcp__plugin_vercel_vercel__get_deployment_build_logs",
+      "Bash(del \"C:\\\\Users\\\\nerya\\\\OneDrive\\\\שולחן העבודה\\\\עבודות שילה AI\\\\Claude\\\\חרבות התקומה\\\\middleware.ts\")"
     ]
   }
 }
