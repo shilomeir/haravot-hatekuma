@@ -1,1052 +1,1472 @@
 [
   {
+    "id": "q001",
     "question": "מה היה התאריך של התקפת חמאס על ישראל שהחלה את מלחמת חרבות התקומה?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "7 באוקטובר 2023",
       "6 באוקטובר 2023",
       "8 באוקטובר 2023",
       "5 באוקטובר 2023"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 7 באוקטובר 2023"
   },
   {
+    "id": "q002",
     "question": "מי היה מנהיג חמאס שנהרג בעזה ב-16 באוקטובר 2024?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "יחיא סינוואר",
       "איסמעיל הנייה",
       "מוחמד סינוואר",
       "חליל משעל"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: יחיא סינוואר"
   },
   {
+    "id": "q003",
     "question": "מי היה מנהיג חמאס הפוליטי שנהרג בטהרן ב-31 ביולי 2024?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "איסמעיל הנייה",
       "יחיא סינוואר",
       "מוחמד סינוואר",
       "חליל משעל"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: איסמעיל הנייה"
   },
   {
+    "id": "q004",
     "question": "מי היה מנהיג חזבאללה שנהרג בביירות בין 19-27 בספטמבר 2024?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "חסן נסראללה",
       "איברהים אקילי",
       "מוסטפא באדרדין",
       "עלי דיعיע"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: חסן נסראללה"
   },
   {
+    "id": "q005",
     "question": "כמה מטענות בונקר הוטלו על נסראללה בתקיפה בביירות?",
+    "type": "result",
+    "difficulty": "easy",
     "options": [
       "כ-80 מטענות",
       "כ-50 מטענות",
       "כ-100 מטענות",
       "כ-30 מטענות"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-80 מטענות"
   },
   {
+    "id": "q006",
     "question": "מתי החלה הפלישה הקרקעית של ישראל לעזה?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "29 באוקטובר 2023",
       "7 באוקטובר 2023",
       "24 באוקטובר 2023",
       "1 בנובמבר 2023"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 29 באוקטובר 2023"
   },
   {
+    "id": "q007",
     "question": "מה היתה פעולת ההצנחה של אחטוב שהצילה 4 בני ערובה מנוסיראת?",
+    "type": "logic",
+    "difficulty": "easy",
     "options": [
       "פעולת ארנון",
       "פעולת גדעון",
       "פעולת שמשון",
       "פעולת דוד"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת ארנון"
   },
   {
+    "id": "q008",
     "question": "מי היו 4 בני הערובה שהוצלו בפעולת ארנון ב-8 ביוני 2024?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "נועה ארגמני, אלמוג מאיר יאן, אנדריי קוזלוב, שלומי זיו",
       "רן גבילי, אלמוג מאיר יאן, אנדריי קוזלוב, שלומי זיו",
       "נועה ארגמני, אלמוג מאיר יאן, אדן אלכסנדר, שלומי זיו",
       "נועה ארגמני, אלמוג מאיר יאן, אנדריי קוזלוב, עדן אלכסנדר"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: נועה ארגמני, אלמוג מאיר יאן, אנדריי קוזלוב, שלומי זיו"
   },
   {
+    "id": "q009",
     "question": "כמה בני ערובה שוחררו בהסכם הפסקת אש הראשון בנובמבר 2023?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "105 בני ערובה",
       "50 בני ערובה",
       "75 בני ערובה",
       "150 בני ערובה"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 105 בני ערובה"
   },
   {
+    "id": "q010",
     "question": "מתי התרחשה פעולת הפייג'ר (ציוד אלקטרוני של חזבאללה)?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "17-18 בספטמבר 2024",
       "19-27 בספטמבר 2024",
       "8 בספטמבר 2024",
       "30 בספטמבר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 17-18 בספטמבר 2024"
   },
   {
+    "id": "q011",
     "question": "כמה אנשים נהרגו בפעולת הפייג'ר?",
+    "type": "location",
+    "difficulty": "easy",
     "options": [
       "לפחות 32 הרוגים",
       "לפחות 50 הרוגים",
       "לפחות 100 הרוגים",
       "לפחות 15 הרוגים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: לפחות 32 הרוגים"
   },
   {
+    "id": "q012",
     "question": "מה היתה פעולת ישראל נגד איראן ב-12 ביוני 2025?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "פעולת אריה עולה",
       "פעולת הפצצה חצות",
       "פעולת טיפה מזל",
       "פעולת שיא אש"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת אריה עולה"
   },
   {
+    "id": "q013",
     "question": "מי היה מנהיג חמאס הצבאי שנהרג ב-13 במאי 2025?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "מוחמד סינוואר",
       "יחיא סינוואר",
       "איסמעיל הנייה",
       "חליל משעל"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: מוחמד סינוואר"
   },
   {
+    "id": "q014",
     "question": "מתי נפל משטר בשאר אל-אסד בסוריה?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "8 בדצמבר 2024",
       "1 בדצמבר 2024",
       "15 בדצמבר 2024",
       "25 בדצמבר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 8 בדצמבר 2024"
   },
   {
+    "id": "q015",
     "question": "מתי נחתם הסכם הפסקת אש בין ישראל לחזבאללה?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "27 בנובמבר 2024",
       "20 בנובמבר 2024",
       "1 בדצמבר 2024",
       "10 בדצמבר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 27 בנובמבר 2024"
   },
   {
+    "id": "q016",
     "question": "מתי הודיע בית הדין הבינלאומי על צו מעצר נגד בנימין נתניהו?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "21 בנובמבר 2024",
       "15 בנובמבר 2024",
       "25 בנובמבר 2024",
       "30 בנובמבר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 21 בנובמבר 2024"
   },
   {
+    "id": "q017",
     "question": "מתי הודיע בית הדין הבינלאומי על צו מעצר נגד יואב גלנט?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "21 בנובמבר 2024",
       "15 בנובמבר 2024",
       "25 בנובמבר 2024",
       "30 בנובמבר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 21 בנובמבר 2024"
   },
   {
+    "id": "q018",
     "question": "מתי נהרג איראן אל-קודס בדמשק?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "1 באפריל 2024",
       "13 באפריל 2024",
       "2 באפריל 2024",
       "15 באפריל 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 1 באפריל 2024"
   },
   {
+    "id": "q019",
     "question": "מתי שיגרה איראן הטלה טילים נגד ישראל?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "13 באפריל 2024",
       "1 באפריל 2024",
       "19 באפריל 2024",
       "26 באפריל 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 13 באפריל 2024"
   },
   {
+    "id": "q020",
     "question": "מתי הגיבה ישראל להטלת הטילים האיראנית?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "19 באפריל 2024",
       "13 באפריל 2024",
       "20 באפריל 2024",
       "26 באפריל 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 19 באפריל 2024"
   },
   {
+    "id": "q021",
     "question": "מתי התחילה פעולת ישראל בלבנון?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "30 בספטמבר 2024",
       "17 בספטמבר 2024",
       "19 בספטמבר 2024",
       "1 באוקטובר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 30 בספטמבר 2024"
   },
   {
+    "id": "q022",
     "question": "מתי הטיל חוטי איראן על ישראל?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "1 באוקטובר 2024",
       "13 באפריל 2024",
       "19 באפריל 2024",
       "26 באוקטובר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 1 באוקטובר 2024"
   },
   {
+    "id": "q023",
     "question": "מתי תקפה ישראל מטרות בשלוש מיקומים באיראן?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "26 באוקטובר 2024",
       "1 באוקטובר 2024",
       "13 באוקטובר 2024",
       "30 באוקטובר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 26 באוקטובר 2024"
   },
   {
+    "id": "q024",
     "question": "מי היה הנהג האיראני שנהרג בפעולות בפברואר 2026?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "עלי חמינאי",
       "קאסם סולימאני",
       "אברהים ראיסי",
       "מוחמד ג'ריד"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: עלי חמינאי"
   },
   {
+    "id": "q025",
     "question": "מתי נחתם הסכם הפסקת אש בין ישראל לחמאס ב-2025?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "15 בינואר 2025",
       "8 בינואר 2025",
       "20 בינואר 2025",
       "25 בינואר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 15 בינואר 2025"
   },
   {
+    "id": "q026",
     "question": "מה היתה פעולת ישראל בעיר ג'נין ב-21 בינואר 2025?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "פעולת קיר ברזל",
       "פעולת כוח וחרב",
       "פעולת רכבי גדעון",
       "פעולת טיפה מזל"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת קיר ברזל"
   },
   {
+    "id": "q027",
     "question": "מה היתה פעולת ישראל כנגד החותים ב-5 במאי 2025?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "פעולת עיר נמל",
       "פעולת קיר ברזל",
       "פעולת כוח וחרב",
       "פעולת טיפה מזל"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת עיר נמל"
   },
   {
+    "id": "q028",
     "question": "מה היתה פעולת ישראל כנגד החותים ב-29 באוגוסט 2025?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "פעולת טיפה מזל",
       "פעולת קיר ברזל",
       "פעולת כוח וחרב",
       "פעולת עיר נמל"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת טיפה מזל"
   },
   {
+    "id": "q029",
     "question": "מה היתה פעולת ישראל נגד חמאס בקטאר ב-9 בספטמבר 2025?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "פעולת שיא אש",
       "פעולת קיר ברזל",
       "פעולת כוח וחרב",
       "פעולת טיפה מזל"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת שיא אש"
   },
   {
+    "id": "q030",
     "question": "מתי התחילה פעולת ישראל כנגד החותים ב-16 במאי 2025?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "פעולת רכבי גדעון",
       "פעולת קיר ברזל",
       "פעולת כוח וחרב",
       "פעולת טיפה מזל"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת רכבי גדעון"
   },
   {
+    "id": "q031",
     "question": "מתי התחילה פעולת כוח וחרב?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "18 במרץ 2025",
       "15 במרץ 2025",
       "20 במרץ 2025",
       "25 במרץ 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 18 במרץ 2025"
   },
   {
+    "id": "q032",
     "question": "מתי התחילה פעולת הפצצה חצות?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "21 ביוני 2025",
       "12 ביוני 2025",
       "25 ביוני 2025",
       "30 ביוני 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 21 ביוני 2025"
   },
   {
+    "id": "q033",
     "question": "מתי התחילה פעולת אריה עולה?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "12 ביוני 2025",
       "5 ביוני 2025",
       "20 ביוני 2025",
       "25 ביוני 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 12 ביוני 2025"
   },
   {
+    "id": "q034",
     "question": "מתי התחילה פעולת טיפה מזל?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "29 באוגוסט 2025",
       "25 באוגוסט 2025",
       "1 בספטמבר 2025",
       "5 בספטמבר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 29 באוגוסט 2025"
   },
   {
+    "id": "q035",
     "question": "מתי התחילה פעולת שיא אש?",
+    "type": "date",
+    "difficulty": "easy",
     "options": [
       "9 בספטמבר 2025",
       "5 בספטמבר 2025",
       "15 בספטמבר 2025",
       "20 בספטמבר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 9 בספטמבר 2025"
   },
   {
+    "id": "q036",
     "question": "מתי התחילה פעולת קיר ברזל?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "21 בינואר 2025",
       "15 בינואר 2025",
       "25 בינואר 2025",
       "30 בינואר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 21 בינואר 2025"
   },
   {
+    "id": "q037",
     "question": "מתי התחילה פעולת עיר נמל?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "5 במאי 2025",
       "1 במאי 2025",
       "10 במאי 2025",
       "15 במאי 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 5 במאי 2025"
   },
   {
+    "id": "q038",
     "question": "מתי התחילה פעולת רכבי גדעון?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "16 במאי 2025",
       "10 במאי 2025",
       "20 במאי 2025",
       "25 במאי 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 16 במאי 2025"
   },
   {
+    "id": "q039",
     "question": "מתי הארכה טראמפ את הפסקת האש עם איראן?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "21 באפריל 2026",
       "16 באפריל 2026",
       "25 באפריל 2026",
       "28 באפריל 2026"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 21 באפריל 2026"
   },
   {
+    "id": "q040",
     "question": "מתי הארכה טראמפ את הפסקת האש עם לבנון?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "23 באפריל 2026",
       "16 באפריל 2026",
       "21 באפריל 2026",
       "28 באפריל 2026"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 23 באפריל 2026"
   },
   {
+    "id": "q041",
     "question": "מתי התחילה הפלישה הקרקעית של ישראל ללבנון?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "30 בספטמבר 2024",
       "19 בספטמבר 2024",
       "17 בספטמבר 2024",
       "1 באוקטובר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 30 בספטמבר 2024"
   },
   {
+    "id": "q042",
     "question": "מתי התחילה הפלישה הקרקעית של ישראל לעזה?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "29 באוקטובר 2023",
       "7 באוקטובר 2023",
       "24 באוקטובר 2023",
       "1 בנובמבר 2023"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 29 באוקטובר 2023"
   },
   {
+    "id": "q043",
     "question": "כמה חיילים ישראלים נהרגו בתחילת המלחמה?",
+    "type": "location",
+    "difficulty": "medium",
     "options": [
       "940 חיילים",
       "500 חיילים",
       "1200 חיילים",
       "700 חיילים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 940 חיילים"
   },
   {
+    "id": "q044",
     "question": "כמה שלבים היו בתוכנית ה-20 נקודות של טראמפ?",
+    "type": "location",
+    "difficulty": "medium",
     "options": [
       "3 שלבים",
       "2 שלבים",
       "4 שלבים",
       "5 שלבים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 3 שלבים"
   },
   {
+    "id": "q045",
     "question": "מתי הודיע טראמפ על תוכנית ה-20 נקודות?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "29 בספטמבר 2025",
       "20 בספטמבר 2025",
       "5 באוקטובר 2025",
       "15 באוקטובר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 29 בספטמבר 2025"
   },
   {
+    "id": "q046",
     "question": "מתי אישרה חמאס את השלב הראשון של תוכנית ה-20 נקודות?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "8 באוקטובר 2025",
       "1 באוקטובר 2025",
       "15 באוקטובר 2025",
       "20 באוקטובר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 8 באוקטובר 2025"
   },
   {
+    "id": "q047",
     "question": "מתי שוחררו 20 בני ערובה חיים ו-4 גופות?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "13 באוקטובר 2025",
       "8 באוקטובר 2025",
       "20 באוקטובר 2025",
       "25 באוקטובר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 13 באוקטובר 2025"
   },
   {
+    "id": "q048",
     "question": "מתי דיבר טראמפ בכנסת?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "13 באוקטובר 2025",
       "8 באוקטובר 2025",
       "20 באוקטובר 2025",
       "25 באוקטובר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 13 באוקטובר 2025"
   },
   {
+    "id": "q049",
     "question": "מתי חתם טראמפ על הצהרה לשלום ושגשוג?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "13 באוקטובר 2025",
       "8 באוקטובר 2025",
       "20 באוקטובר 2025",
       "25 באוקטובר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 13 באוקטובר 2025"
   },
   {
+    "id": "q050",
     "question": "מתי חתמה הוועדה הלאומית לניהול עזה על הצהרת משימה?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "17 בינואר 2026",
       "14 בינואר 2026",
       "20 בינואר 2026",
       "25 בינואר 2026"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 17 בינואר 2026"
   },
   {
+    "id": "q051",
     "question": "מתי חתמה לוח עזה לשלום על תקנון בדאווס?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "22 בינואר 2026",
       "17 בינואר 2026",
       "25 בינואר 2026",
       "30 בינואר 2026"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 22 בינואר 2026"
   },
   {
+    "id": "q052",
     "question": "מתי נמצא גופת בן הערובה האחרון בעזה?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "26 בינואר 2026",
       "22 בינואר 2026",
       "30 בינואר 2026",
       "1 בפברואר 2026"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 26 בינואר 2026"
   },
   {
+    "id": "q053",
     "question": "מי היה בן הערובה האחרון שגופתו נמצאה בעזה?",
+    "type": "figure",
+    "difficulty": "medium",
     "options": [
       "רן גבילי",
       "אלמוג מאיר יאן",
       "אנדריי קוזלוב",
       "שלומי זיו"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: רן גבילי"
   },
   {
+    "id": "q054",
     "question": "כמה גופות של בני ערובה שוחררו בין 14 באוקטובר ל-4 בדצמבר 2025?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "27 גופות",
       "20 גופות",
       "30 גופות",
       "40 גופות"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 27 גופות"
   },
   {
+    "id": "q055",
     "question": "מתי נכנסה חזבאללה למלחמה נגד איראן?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "1 במרץ 2026",
       "28 בפברואר 2026",
       "5 במרץ 2026",
       "10 במרץ 2026"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 1 במרץ 2026"
   },
   {
+    "id": "q056",
     "question": "מתי חזרו התקפות החותים על ישראל?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "15 במרץ 2026",
       "10 במרץ 2026",
       "20 במרץ 2026",
       "25 במרץ 2026"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 15 במרץ 2026"
   },
   {
+    "id": "q057",
     "question": "מתי התחיל הסכם הפסקת אש בין ישראל לחזבאללה?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "27 בנובמבר 2024",
       "20 בנובמבר 2024",
       "1 בדצמבר 2024",
       "10 בדצמבר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 27 בנובמבר 2024"
   },
   {
+    "id": "q058",
     "question": "מתי משכה ישראל את כוחותיה מלבנון?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "18 בפברואר 2025",
       "10 בפברואר 2025",
       "25 בפברואר 2025",
       "1 במרץ 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 18 בפברואר 2025"
   },
   {
+    "id": "q059",
     "question": "מתי התחיל הסכם הפסקת אש בין ישראל לחמאס ב-2025?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "15 בינואר 2025",
       "8 בינואר 2025",
       "20 בינואר 2025",
       "25 בינואר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 15 בינואר 2025"
   },
   {
+    "id": "q060",
     "question": "מתי התחיל הסכם הפסקת אש בין ישראל לחמאס ב-2023?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "24 בנובמבר 2023",
       "7 בנובמבר 2023",
       "15 בנובמבר 2023",
       "1 בדצמבר 2023"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 24 בנובמבר 2023"
   },
   {
+    "id": "q061",
     "question": "כמה בני ערובה שוחררו בהסכם הפסקת האש הראשון?",
+    "type": "sequence",
+    "difficulty": "medium",
     "options": [
       "105 בני ערובה",
       "50 בני ערובה",
       "75 בני ערובה",
       "150 בני ערובה"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 105 בני ערובה"
   },
   {
+    "id": "q062",
     "question": "מתי נכנסה ישראל לגולן?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "8 בדצמבר 2024",
       "1 בדצמבר 2024",
       "15 בדצמבר 2024",
       "25 בדצמבר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 8 בדצמבר 2024"
   },
   {
+    "id": "q063",
     "question": "מתי התחילה פעולת ישראל כנגד החותים?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "5 במאי 2025",
       "1 במאי 2025",
       "10 במאי 2025",
       "15 במאי 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 5 במאי 2025"
   },
   {
+    "id": "q064",
     "question": "מתי התחיל ההסכם בין ישראל לחמאס?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "15 בינואר 2025",
       "8 בינואר 2025",
       "20 בינואר 2025",
       "25 בינואר 2025"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 15 בינואר 2025"
   },
   {
+    "id": "q065",
     "question": "מתי התחיל ההסכם בין ישראל לחזבאללה?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "27 בנובמבר 2024",
       "20 בנובמבר 2024",
       "1 בדצמבר 2024",
       "10 בדצמבר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 27 בנובמבר 2024"
   },
   {
+    "id": "q066",
     "question": "מתי התחיל ההסכם בין ישראל לחמאס ב-2023?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "24 בנובמבר 2023",
       "7 בנובמבר 2023",
       "15 בנובמבר 2023",
       "1 בדצמבר 2023"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 24 בנובמבר 2023"
   },
   {
+    "id": "q067",
     "question": "כמה טילים שיגרה חמאס על ישראל ב-7 באוקטובר 2023?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "כ-2,500 טילים",
       "כ-1,000 טילים",
       "כ-5,000 טילים",
       "כ-500 טילים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-2,500 טילים"
   },
   {
+    "id": "q068",
     "question": "כמה טרוריסטים חדרו לישראל ב-7 באוקטובר?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "כ-1,200 טרוריסטים",
       "כ-500 טרוריסטים",
       "כ-2,000 טרוריסטים",
       "כ-800 טרוריסטים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-1,200 טרוריסטים"
   },
   {
+    "id": "q069",
     "question": "כמה אזרחים ישראלים נהרגו ב-7 באוקטובר 2023?",
+    "type": "date",
+    "difficulty": "medium",
     "options": [
       "כ-1,200 אזרחים",
       "כ-500 אזרחים",
       "כ-2,000 אזרחים",
       "כ-800 אזרחים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-1,200 אזרחים"
   },
   {
+    "id": "q070",
     "question": "מה היה שם הפעולה של התקפת חמאס?",
+    "type": "organization",
+    "difficulty": "medium",
     "options": [
       "פעולת הצפה",
       "פעולת ברק",
       "פעולת סערה",
       "פעולת חרב"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת הצפה"
   },
   {
+    "id": "q071",
     "question": "מה היתה פעולת ישראל בעזה בתחילת המלחמה?",
+    "type": "location",
+    "difficulty": "medium",
     "options": [
       "פעולת ברק",
       "פעולת סערה",
       "פעולת חרב",
       "פעולת הצפה"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת ברק"
   },
   {
+    "id": "q072",
     "question": "כמה בנקודות הצבא הישראלי נהרסו ב-7 באוקטובר?",
+    "type": "date",
+    "difficulty": "hard",
     "options": [
       "כ-20 בנקודות",
       "כ-10 בנקודות",
       "כ-30 בנקודות",
       "כ-5 בנקודות"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-20 בנקודות"
   },
   {
+    "id": "q073",
     "question": "מי היה שר ההגנה בתחילת המלחמה?",
+    "type": "figure",
+    "difficulty": "hard",
     "options": [
       "יואב גלנט",
       "בני גנץ",
       "אביב כוכבי",
       "גדי שמוני"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: יואב גלנט"
   },
   {
+    "id": "q074",
     "question": "כמה בני ערובה חטופים היו בעזה?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "כ-240 בני ערובה",
       "כ-100 בני ערובה",
       "כ-350 בני ערובה",
       "כ-150 בני ערובה"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-240 בני ערובה"
   },
   {
+    "id": "q075",
     "question": "כמה בני ערובה חזרו חיים מעזה?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "כ-116 בני ערובה",
       "כ-80 בני ערובה",
       "כ-150 בני ערובה",
       "כ-50 בני ערובה"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-116 בני ערובה"
   },
   {
+    "id": "q076",
     "question": "כמה בני ערובה נהרגו בעזה?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "כ-37 בני ערובה",
       "כ-20 בני ערובה",
       "כ-50 בני ערובה",
       "כ-15 בני ערובה"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-37 בני ערובה"
   },
   {
+    "id": "q077",
     "question": "מי היתה הילדה הצעירה ביותר בין בני הערובה?",
+    "type": "figure",
+    "difficulty": "hard",
     "options": [
       "אביגיל אור",
       "אלמוג מאיר יאן",
       "נועה ארגמני",
       "שלומי זיו"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: אביגיל אור"
   },
   {
+    "id": "q078",
     "question": "כמה טילים שיגרה חזבאללה על ישראל במהלך המלחמה?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "כ-8,500 טילים",
       "כ-5,000 טילים",
       "כ-10,000 טילים",
       "כ-3,000 טילים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-8,500 טילים"
   },
   {
+    "id": "q079",
     "question": "כמה תושבים בלבנון פונו מביתם?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "כ-200,000 תושבים",
       "כ-100,000 תושבים",
       "כ-300,000 תושבים",
       "כ-50,000 תושבים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-200,000 תושבים"
   },
   {
+    "id": "q080",
     "question": "מתי נכנסה ישראל ללבנון?",
+    "type": "date",
+    "difficulty": "hard",
     "options": [
       "30 בספטמבר 2024",
       "1 בספטמבר 2024",
       "15 בספטמבר 2024",
       "10 באוקטובר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 30 בספטמבר 2024"
   },
   {
+    "id": "q081",
     "question": "כמה בניינים בעזה נהרסו במהלך המלחמה?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "כ-70% מהבניינים",
       "כ-30% מהבניינים",
       "כ-50% מהבניינים",
       "כ-90% מהבניינים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-70% מהבניינים"
   },
   {
+    "id": "q082",
     "question": "כמה אזרחים בעזה נהרגו במהלך המלחמה?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "עשרות אלפים",
       "אלפים ספורים",
       "מאות",
       "מיליון"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: עשרות אלפים"
   },
   {
+    "id": "q083",
     "question": "מה היתה פעולת ישראל בשיפא?",
+    "type": "logic",
+    "difficulty": "hard",
     "options": [
       "פעולת אל שיפא",
       "פעולת בית הספital",
       "פעולת בנים",
       "פעולת חוקים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פעולת אל שיפא"
   },
   {
+    "id": "q084",
     "question": "מי ביקר בישראל בתחילת המלחמה?",
+    "type": "logic",
+    "difficulty": "hard",
     "options": [
       "ג'ו ביידן",
       "דונלד טראמפ",
       "מקרון",
       "סונק"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: ג'ו ביידן"
   },
   {
+    "id": "q085",
     "question": "מתי הודיעה ישראל על מצב חירום?",
+    "type": "date",
+    "difficulty": "hard",
     "options": [
       "7 באוקטובר 2023",
       "6 באוקטובר 2023",
       "8 באוקטובר 2023",
       "5 באוקטובר 2023"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 7 באוקטובר 2023"
   },
   {
+    "id": "q086",
     "question": "מתי הודיעה ישראל על הפלישה לעזה?",
+    "type": "date",
+    "difficulty": "hard",
     "options": [
       "29 באוקטובר 2023",
       "24 באוקטובר 2023",
       "1 בנובמבר 2023",
       "7 באוקטובר 2023"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 29 באוקטובר 2023"
   },
   {
+    "id": "q087",
     "question": "מתי הודיעה ישראל על הפלישה ללבנון?",
+    "type": "date",
+    "difficulty": "hard",
     "options": [
       "30 בספטמבר 2024",
       "1 בספטמבר 2024",
       "15 בספטמבר 2024",
       "10 באוקטובר 2024"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: 30 בספטמבר 2024"
   },
   {
+    "id": "q088",
     "question": "מי היה מפקד הדיוויזיה בדרום בתחילת המלחמה?",
+    "type": "figure",
+    "difficulty": "hard",
     "options": [
       "אופיר וינר",
       "יוב שלוש",
       "אבי בלוט",
       "גדי שמוני"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: אופיר וינר"
   },
   {
+    "id": "q089",
     "question": "מי היה מפקד אגף הים בתחילת המלחמה?",
+    "type": "figure",
+    "difficulty": "hard",
     "options": [
       "אלי שרר",
       "אביב כוכבי",
       "גדי שמוני",
       "אופיר וינר"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: אלי שרר"
   },
   {
+    "id": "q090",
     "question": "מי היה מפקד אגף האוויר בתחילת המלחמה?",
+    "type": "figure",
+    "difficulty": "hard",
     "options": [
       "רון נחשון",
       "אביב כוכבי",
       "גדי שמוני",
       "אופיר וינר"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: רון נחשון"
   },
   {
+    "id": "q091",
     "question": "כמה טנקים הפסידה ישראל ב-7 באוקטובר?",
+    "type": "date",
+    "difficulty": "hard",
     "options": [
       "כ-100 טנקים",
       "כ-50 טנקים",
       "כ-200 טנקים",
       "כ-30 טנקים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-100 טנקים"
   },
   {
+    "id": "q092",
     "question": "כמה כלי טיס הפסידה ישראל?",
+    "type": "result",
+    "difficulty": "hard",
     "options": [
       "כ-20 כלי טיס",
       "כ-5 כלי טיס",
       "כ-50 כלי טיס",
       "כ-10 כלי טיס"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-20 כלי טיס"
   },
   {
+    "id": "q093",
     "question": "איזה קיבוץ היה הכי קשה במתקפה?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "קיבוץ בארי",
       "קיבוץ עין גדי",
       "קיבוץ בית הערבה",
       "קיבוץ מסדה"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: קיבוץ בארי"
   },
   {
+    "id": "q094",
     "question": "איזו עיר בדרום הייתה הכי קשה במתקפה?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "אשקלון",
       "אשדוד",
       "בארשבע",
       "קריית גת"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: אשקלון"
   },
   {
+    "id": "q095",
     "question": "איזה מחנה צבאי היה הכי קשה במתקפה?",
+    "type": "logic",
+    "difficulty": "hard",
     "options": [
       "בסיס רימים",
       "בסיס צריפין",
       "בסיס הצפון",
       "בסיס תל נוף"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: בסיס רימים"
   },
   {
+    "id": "q096",
     "question": "מה היה הטיל הראשי של חמאס?",
+    "type": "organization",
+    "difficulty": "hard",
     "options": [
       "קסאם",
       "פאתח",
       "עזאדין",
       "מנתור"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: קסאם"
   },
   {
+    "id": "q097",
     "question": "מה היה הטיל הראשי של חזבאללה?",
+    "type": "logic",
+    "difficulty": "hard",
     "options": [
       "פאתח",
       "קסאם",
       "עזאדין",
       "מנתור"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: פאתח"
   },
   {
+    "id": "q098",
     "question": "מה היה הטיל הראשי של איראן?",
+    "type": "logic",
+    "difficulty": "hard",
     "options": [
       "שהאב",
       "קסאם",
       "פאתח",
       "עזאדין"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: שהאב"
   },
   {
+    "id": "q099",
     "question": "כמה עזרה הומניטרית נכנסה לעזה?",
+    "type": "location",
+    "difficulty": "hard",
     "options": [
       "כמויות מוגבלות",
       "כמויות רבות",
       "אין עזרה",
       "עזרה מלאה"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כמויות מוגבלות"
   },
   {
+    "id": "q100",
     "question": "מי היו הארגונים הבינלאומיים שפעלו בעזה?",
+    "type": "figure",
+    "difficulty": "hard",
     "options": [
       "UNRWA, ICRC, WHO",
       "רק UNRWA",
       "רק ICRC",
       "אף ארגון"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: UNRWA, ICRC, WHO"
   },
   {
+    "id": "q101",
     "question": "איזה ערוץ טלוויזיה ישראלי היה הראשון לדווח על ההתקפה?",
+    "type": "sequence",
+    "difficulty": "hard",
     "options": [
       "ערוץ 12",
       "ערוץ 13",
       "ערוץ 14",
       "ערוץ 11"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: ערוץ 12"
   },
   {
+    "id": "q102",
     "question": "מה היה הטאג בטוויטר הנפוץ ביותר בתחילת המלחמה?",
+    "type": "logic",
+    "difficulty": "hard",
     "options": [
       "#IsraelUnderAttack",
       "#SaveIsrael",
       "#IsraelAtWar",
       "#IsraelStrong"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: #IsraelUnderAttack"
   },
   {
+    "id": "q103",
     "question": "מה היה שם המלחמה בעברית?",
+    "type": "logic",
+    "difficulty": "hard",
     "options": [
       "מלחמת חרבות התקומה",
       "מלחמת ברק",
       "מלחמת סערה",
       "מלחמת חרב"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: מלחמת חרבות התקומה"
   },
   {
+    "id": "q104",
     "question": "מה היה שם המלחמה בערבית?",
+    "type": "logic",
+    "difficulty": "hard",
     "options": [
       "معركة الطوفان",
       "معركة البرق",
       "معركة العاصفة",
       "معركة السيف"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: معركة الطوفان"
   },
   {
+    "id": "q105",
     "question": "כמה ימים נמשכה המלחמה עד לסוף שנת 2025?",
+    "type": "date",
+    "difficulty": "hard",
     "options": [
       "כ-480 ימים",
       "כ-300 ימים",
       "כ-600 ימים",
       "כ-200 ימים"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "explanation": "התשובה הנכונה היא: כ-480 ימים"
   }
 ]

@@ -1,11 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-
-interface StreakData {
-  dates: string[]
-  currentStreak: number
-}
+import { loadProgress } from '@/lib/storage'
 
 function getDateKey(daysAgo = 0): string {
   const d = new Date()
@@ -14,43 +10,65 @@ function getDateKey(daysAgo = 0): string {
 }
 
 export function StreakCard() {
-  const [streakData, setStreakData] = useState<StreakData>({ dates: [], currentStreak: 0 })
+  const [streak, setStreak] = useState(0)
+  const [lastPlayed, setLastPlayed] = useState('')
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem('streak-data')
-      if (raw) setStreakData(JSON.parse(raw))
-    } catch {}
+    setMounted(true)
+    const p = loadProgress()
+    setStreak(p.currentStreak)
+    setLastPlayed(p.lastPlayedDate)
   }, [])
 
   const last7 = Array.from({ length: 7 }, (_, i) => {
     const key = getDateKey(6 - i)
-    return streakData.dates.includes(key)
+    return { key, played: lastPlayed ? getDateKey(6 - i) <= lastPlayed : false }
   })
 
+  const playedToday = lastPlayed === getDateKey(0)
+
+  if (!mounted) {
+    return (
+      <div className="rounded-2xl p-4 border" style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)', minHeight: '100px' }} />
+    )
+  }
+
   return (
-    <div className="bg-white rounded-xl border border-slate-200 p-4">
-      <div className="flex items-center justify-between mb-3">
-        <h2 className="font-bold text-sm text-slate-700">🔥 רצף יומי</h2>
-        <span className="text-2xl font-black text-orange-500">{streakData.currentStreak}</span>
+    <div
+      className="rounded-2xl p-4 border"
+      style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)', boxShadow: 'var(--shadow-soft)' }}
+    >
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="font-bold text-sm" style={{ color: 'var(--color-text)' }}>🔥 רצף יומי</h2>
+        <div className="text-right">
+          <span className="text-2xl font-black" style={{ color: '#F59E0B' }}>{streak}</span>
+          <span className="text-xs mr-1" style={{ color: 'var(--color-text-muted)' }}>ימים</span>
+        </div>
       </div>
-      <div className="flex gap-1.5 justify-between">
-        {last7.map((played, i) => (
-          <div key={i} className="flex flex-col items-center gap-1">
-            <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
-                played
-                  ? 'bg-orange-500 text-white'
-                  : 'bg-slate-100 text-slate-400'
-              }`}
-            >
-              {played ? '🔥' : '○'}
-            </div>
+      <div className="flex gap-1.5 justify-between mb-3">
+        {last7.map(({ played }, i) => (
+          <div
+            key={i}
+            className="flex-1 h-6 rounded-full flex items-center justify-center text-xs transition-all"
+            style={{
+              background: played ? '#F59E0B' : 'var(--color-bg-soft)',
+              color: played ? 'white' : 'var(--color-text-muted)',
+            }}
+          >
+            {played ? '🔥' : ''}
           </div>
         ))}
       </div>
-      {streakData.currentStreak === 0 && (
-        <p className="text-xs text-slate-400 mt-2 text-center">שחק היום כדי להתחיל רצף!</p>
+      {streak === 0 && (
+        <p className="text-xs text-center" style={{ color: 'var(--color-text-muted)' }}>
+          שחק היום כדי להתחיל רצף!
+        </p>
+      )}
+      {streak > 0 && playedToday && (
+        <p className="text-xs text-center" style={{ color: '#F59E0B' }}>
+          ✨ שיחקת היום! המשך כך
+        </p>
       )}
     </div>
   )
