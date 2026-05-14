@@ -41,18 +41,40 @@ export function TimerBar({ totalSeconds, onExpire, paused = false }: TimerBarPro
   if (totalSeconds === 0) return null
 
   const pct = (remaining / totalSeconds) * 100
-  const color =
-    pct > 50 ? 'bg-green-500' : pct > 25 ? 'bg-yellow-500' : 'bg-red-500'
+  const isWarning = pct <= 25
+  const isDanger = pct <= 12
+
+  const barColor = isDanger
+    ? 'var(--color-danger)'
+    : isWarning
+    ? 'var(--color-warning)'
+    : 'var(--color-success)'
 
   return (
     <div className="space-y-1">
-      <div className="flex justify-between text-xs text-slate-500">
-        <span>⏱ {remaining}s</span>
+      <div className="flex justify-between text-xs" style={{ color: 'var(--color-text-muted)' }}>
+        <span>⏱</span>
+        <span
+          className="font-bold"
+          style={{
+            color: isDanger ? 'var(--color-danger)' : isWarning ? 'var(--color-warning)' : 'var(--color-text-muted)',
+          }}
+        >
+          {remaining}s
+        </span>
       </div>
-      <div className="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+      <div
+        className="w-full h-2.5 rounded-full overflow-hidden"
+        style={{ background: 'var(--color-bg-soft)' }}
+        role="progressbar"
+        aria-valuenow={remaining}
+        aria-valuemin={0}
+        aria-valuemax={totalSeconds}
+        aria-label={`נשארו ${remaining} שניות`}
+      >
         <div
-          className={`h-full rounded-full transition-all duration-1000 ${color}`}
-          style={{ width: `${pct}%` }}
+          className={`h-full rounded-full transition-all duration-1000${isDanger ? ' animate-timer-pulse' : ''}`}
+          style={{ width: `${pct}%`, background: barColor }}
         />
       </div>
     </div>

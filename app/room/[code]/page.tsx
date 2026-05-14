@@ -46,16 +46,13 @@ export default function RoomPage({
       channel.bind('player-joined', (data: { players: Record<string, RoomPlayer> }) => {
         setPlayers(data.players)
       })
-
       channel.bind('game-started', (data: { questions: Question[] }) => {
         setQuestions(data.questions)
         setPhase('playing')
       })
-
       channel.bind('score-update', (data: { players: Record<string, RoomPlayer> }) => {
         setPlayers(data.players)
       })
-
       channel.bind('game-over', () => {
         setPhase('results')
       })
@@ -82,16 +79,12 @@ export default function RoomPage({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code: code.toUpperCase(), nickname: joinNickname.trim() }),
       })
-      if (!res.ok) {
-        const data = await res.json()
-        throw new Error(data.error ?? 'שגיאה בהצטרפות')
-      }
-      const { state } = await res.json()
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error ?? data.message ?? 'שגיאה בהצטרפות')
       setRoom(code.toUpperCase(), joinNickname.trim(), false)
-      setPlayers(state.players)
+      setPlayers(data.state.players)
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'שגיאה בהצטרפות לחדר'
-      setError(message)
+      setError(err instanceof Error ? err.message : 'שגיאה בהצטרפות לחדר')
     } finally {
       setJoining(false)
     }
@@ -110,13 +103,21 @@ export default function RoomPage({
     }
   }
 
-  // Join form (not yet joined)
+  // Join form
   if (!hasJoined) {
     return (
       <div className="max-w-md mx-auto px-4 py-10">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-black text-[#0d2d6e] mb-2">🌐 הצטרף לחדר</h1>
-          <div className="text-5xl font-black tracking-widest text-[#0d2d6e] bg-white border-2 border-[#0d2d6e] rounded-2xl px-6 py-3 inline-block mt-2">
+          <div className="text-4xl mb-3">🌐</div>
+          <h1 className="text-2xl font-black mb-2" style={{ color: 'var(--color-navy-mid)' }}>הצטרף לחדר</h1>
+          <div
+            className="text-4xl font-black tracking-widest rounded-2xl px-6 py-3 inline-block mt-2"
+            style={{
+              background: 'var(--color-surface)',
+              border: '2px solid var(--color-navy-mid)',
+              color: 'var(--color-navy-mid)',
+            }}
+          >
             {code.toUpperCase()}
           </div>
         </div>
@@ -127,15 +128,20 @@ export default function RoomPage({
             onChange={(e) => setJoinNickname(e.target.value)}
             placeholder="שם כינוי..."
             maxLength={20}
-            className="w-full border border-slate-200 rounded-xl px-4 py-3 text-right focus:outline-none focus:ring-2 focus:ring-[#1a4b9c]"
+            className="w-full rounded-xl px-4 py-3 text-right focus:outline-none transition-all"
+            style={{
+              border: '1.5px solid var(--color-border)',
+              background: 'var(--color-surface)',
+              color: 'var(--color-text)',
+            }}
             dir="rtl"
-            required
           />
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {error && <p className="text-sm font-medium" style={{ color: 'var(--color-danger)' }}>⚠️ {error}</p>}
           <button
             type="submit"
             disabled={joining}
-            className="w-full bg-[#0d2d6e] hover:bg-[#1a4b9c] text-white font-bold py-3 rounded-xl transition-colors"
+            className="w-full py-3.5 rounded-2xl font-bold text-white transition-all disabled:opacity-50"
+            style={{ background: 'var(--color-navy-mid)' }}
           >
             {joining ? '⏳ מצטרף...' : 'הצטרף ▶'}
           </button>
@@ -144,7 +150,7 @@ export default function RoomPage({
     )
   }
 
-  // Lobby phase
+  // Lobby
   if (phase === 'lobby' || phase === null) {
     return (
       <RoomLobby
@@ -158,25 +164,21 @@ export default function RoomPage({
     )
   }
 
-  // Results phase
+  // Results
   if (phase === 'results') {
     const sorted = [...players].sort((a, b) => b.score - a.score)
     return (
       <div className="max-w-lg mx-auto px-4 py-8 space-y-4">
-        <h1 className="text-2xl font-black text-[#0d2d6e] text-center">🏆 תוצאות</h1>
+        <h1 className="text-2xl font-black text-center" style={{ color: 'var(--color-navy-mid)' }}>🏆 תוצאות</h1>
         <div className="space-y-2">
           {sorted.map((p, i) => (
-            <PlayerScore
-              key={p.nickname}
-              player={p}
-              isLocal={p.nickname === nickname}
-              rank={i}
-            />
+            <PlayerScore key={p.nickname} player={p} isLocal={p.nickname === nickname} rank={i} />
           ))}
         </div>
         <button
           onClick={() => router.push('/')}
-          className="w-full bg-[#0d2d6e] text-white font-bold py-3 rounded-xl hover:bg-[#1a4b9c] transition-colors"
+          className="w-full py-3.5 rounded-2xl font-bold text-white transition-all hover:opacity-90"
+          style={{ background: 'var(--color-navy-mid)' }}
         >
           🏠 חזור לבית
         </button>
@@ -184,14 +186,24 @@ export default function RoomPage({
     )
   }
 
-  // Playing phase
+  // Playing phase — Coming Soon
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
-      <div className="text-center py-8 text-slate-500">
-        <div className="text-4xl mb-4">🎮</div>
-        <p>המשחק המרובה בתהליך פיתוח נוסף...</p>
-        <p className="text-sm mt-2">ניקוד מתעדכן בזמן אמת</p>
-      </div>
+    <div className="max-w-lg mx-auto px-4 py-16 text-center space-y-6">
+      <div className="text-6xl">🚧</div>
+      <h2 className="text-2xl font-black" style={{ color: 'var(--color-navy-mid)' }}>
+        משחק מרובה — בקרוב
+      </h2>
+      <p className="text-base" style={{ color: 'var(--color-text-muted)' }}>
+        ממשק המשחק המרובה בפיתוח פעיל. <br />
+        הלובי כבר עובד — חזור בקרוב לגרסה המלאה!
+      </p>
+      <button
+        onClick={() => router.push('/')}
+        className="px-6 py-3 rounded-2xl font-bold text-white transition-all hover:opacity-90"
+        style={{ background: 'var(--color-navy-mid)' }}
+      >
+        🏠 חזור לבית
+      </button>
     </div>
   )
 }

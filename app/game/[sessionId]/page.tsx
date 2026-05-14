@@ -1,10 +1,11 @@
 'use client'
 
-import { use, useEffect } from 'react'
+import { use, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useGameStore } from '@/store/gameStore'
 import { GameCard } from '@/components/game/GameCard'
 import { AudioController } from '@/components/game/AudioController'
+import Link from 'next/link'
 
 export default function GameSessionPage({
   params,
@@ -13,40 +14,14 @@ export default function GameSessionPage({
 }) {
   const { sessionId } = use(params)
   const router = useRouter()
-  const { phase, sessionId: storeSessionId, mode, lives, nickname } = useGameStore()
+  const { phase, sessionId: storeSessionId } = useGameStore()
+  const [sessionChecked, setSessionChecked] = useState(false)
 
-  // Record streak in localStorage when game starts
+  // Give store time to hydrate before checking session
   useEffect(() => {
-    try {
-      const today = new Date().toISOString().split('T')[0]
-      const raw = localStorage.getItem('streak-data')
-      const data = raw ? JSON.parse(raw) : { dates: [], currentStreak: 0 }
-      if (!data.dates.includes(today)) {
-        data.dates.push(today)
-        // Calculate current streak
-        let streak = 0
-        const d = new Date()
-        while (true) {
-          const key = d.toISOString().split('T')[0]
-          if (data.dates.includes(key)) {
-            streak++
-            d.setDate(d.getDate() - 1)
-          } else {
-            break
-          }
-        }
-        data.currentStreak = streak
-        localStorage.setItem('streak-data', JSON.stringify(data))
-      }
-    } catch {}
+    const t = setTimeout(() => setSessionChecked(true), 50)
+    return () => clearTimeout(t)
   }, [])
-
-  // Redirect if session mismatch
-  useEffect(() => {
-    if (storeSessionId && storeSessionId !== sessionId) {
-      router.replace('/game')
-    }
-  }, [storeSessionId, sessionId, router])
 
   // Navigate to results when finished
   useEffect(() => {
@@ -55,7 +30,20 @@ export default function GameSessionPage({
     }
   }, [phase, sessionId, router])
 
-  if (!storeSessionId || storeSessionId !== sessionId) {
+  if (sessionChecked && (!storeSessionId || storeSessionId !== sessionId)) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4 px-4">
+        <div className="text-5xl">😕</div>
+        <h2 className="text-xl font-bold text-slate-700 text-center">המשחק לא נמצא</h2>
+        <p className="text-slate-500 text-center text-sm">העמוד רוענן או שהסשן פג תוקף.</p>
+        <Link href="/game" className="bg-[#0d2d6e] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#1a4b9c] transition-colors">
+          ← חזור לבחירת משחק
+        </Link>
+      </div>
+    )
+  }
+
+  if (!sessionChecked) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-xl text-slate-400">⏳ טוען...</div>

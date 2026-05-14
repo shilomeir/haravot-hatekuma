@@ -18,18 +18,26 @@ export function selectQuestions(params: {
   excludeIds?: string[]
 }): Question[] {
   const { difficulty, n = 10, excludeIds = [] } = params
-  let pool = QUESTIONS.filter(q => !excludeIds.includes(q.id))
-  if (difficulty) pool = pool.filter(q => q.difficulty === difficulty)
+  let pool = QUESTIONS.filter((q) => !excludeIds.includes(q.id))
+  if (difficulty) {
+    const byDiff = pool.filter((q) => q.difficulty === difficulty)
+    // Fall back to full pool if difficulty filter produces too few questions
+    if (byDiff.length >= Math.min(n, 5)) pool = byDiff
+  }
   const shuffled = [...pool]
   for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
   return shuffled.slice(0, Math.min(n, shuffled.length))
 }
 
 export function getQuestionsByType(type: Question['type']): Question[] {
-  return QUESTIONS.filter(q => q.type === type)
+  return QUESTIONS.filter((q) => q.type === type)
+}
+
+export function getAllQuestions(): Question[] {
+  return QUESTIONS
 }
 
 function mulberry32(seed: number) {
@@ -47,8 +55,12 @@ export function getDailyQuestions(): Question[] {
   const rand = mulberry32(seed)
   const shuffled = [...QUESTIONS]
   for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    const j = Math.floor(rand() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
   return shuffled.slice(0, 10)
+}
+
+export function getTodayKey(): string {
+  return new Date().toISOString().slice(0, 10)
 }

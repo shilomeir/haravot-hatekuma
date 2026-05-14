@@ -30,12 +30,15 @@ function CreateRoomContent() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nickname: nick }),
       })
-      if (!res.ok) throw new Error('שגיאה ביצירת החדר')
-      const { code } = await res.json()
-      setRoom(code, nick, true)
-      router.push(`/room/${code}`)
-    } catch {
-      setError('שגיאה ביצירת החדר. נסה שוב.')
+      const data = await res.json()
+      if (!res.ok) {
+        throw new Error(data.message ?? 'שגיאה ביצירת החדר')
+      }
+      setRoom(data.code, nick, true)
+      router.push(`/room/${data.code}`)
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'שגיאה ביצירת החדר. נסה שוב.'
+      setError(msg)
       setLoading(false)
     }
   }
